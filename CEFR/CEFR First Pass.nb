@@ -1,0 +1,3272 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    142027,       3264]
+NotebookOptionsPosition[    140364,       3218]
+NotebookOutlinePosition[    140707,       3233]
+CellTagsIndexPosition[    140664,       3230]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"levelNames", " ", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<a1\>\"", ",", "\"\<a2\>\"", ",", "\"\<b1\>\"", ",", "\"\<b2\>\""}], 
+    "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.708066823125216*^9, 3.7080668347663016`*^9}, {
+  3.708067093533904*^9, 3.7080671033663254`*^9}, {3.7080673922240524`*^9, 
+  3.708067396501897*^9}},ExpressionUUID->"4495ec39-88a8-427b-ba6f-\
+94e8945c1fc0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rootPath", " ", "=", " ", 
+   RowBox[{"NotebookDirectory", "[", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.708067105514363*^9, 3.708067131571233*^9}, {
+  3.70806721954996*^9, 3.708067243614083*^9}, {3.708111593732821*^9, 
+  3.708111602597431*^9}},ExpressionUUID->"4fcd4ad0-faf2-4f3e-b199-\
+568822f18da4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"texts", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{
+        "rootPath", " ", ",", " ", "\"\<\\\\data\\\\sentences\\\\\>\"", " ", 
+         ",", 
+         RowBox[{"StringJoin", "[", " ", 
+          RowBox[{"x", ",", "\"\< sentences.txt\>\""}], "]"}]}], "}"}], "]"}],
+       "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "levelNames"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.708067453276176*^9, 3.708067454197705*^9}, {
+  3.708071570634652*^9, 3.708071594875949*^9}, {3.708071659064023*^9, 
+  3.708071728816186*^9}, {3.7080723094006195`*^9, 3.7080723142402024`*^9}, {
+  3.708111060493948*^9, 3.70811106631606*^9}, {3.7081114178207617`*^9, 
+  3.708111502428893*^9}, {3.708111608933325*^9, 3.7081116110123034`*^9}, {
+  3.708111647159012*^9, 3.7081116499099674`*^9}, {3.708111708269863*^9, 
+  3.7081117156228104`*^9}},ExpressionUUID->"2fa24b2c-c7ed-404e-a0e8-\
+d619dfbfd42a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextSentences", "[", 
+  RowBox[{
+   RowBox[{"texts", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", "4"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7081115234793634`*^9, 
+  3.7081115417883825`*^9}},ExpressionUUID->"1f8eb181-c146-4794-9224-\
+e5f89326de75"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"I would like that, my dear.\"\>", 
+   ",", "\<\"I would like to order  la carte.\"\>", 
+   ",", "\<\"I would like to compose a message.\"\>", 
+   ",", "\<\"Beautiful work.\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.708111531833804*^9, 
+  3.7081115442010984`*^9}},ExpressionUUID->"bd7fdba0-ee18-49b4-9bb1-\
+4318dac79254"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sentences", " ", "=", " ", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"TextSentences", "[", 
+      RowBox[{"#", ",", "3"}], "]"}], "&"}], "@", "texts"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7081117581144094`*^9, 3.708111780428277*^9}, {
+  3.7081118140131645`*^9, 3.7081118178684063`*^9}, {3.708112140439295*^9, 
+  3.7081121435324945`*^9}},ExpressionUUID->"22b5b67b-4eb7-4eec-ae4f-\
+bc3a656ee087"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"I would like that, my dear.\"\>", 
+   ",", "\<\"I would like to order  la carte.\"\>", 
+   ",", "\<\"I would like to compose a message.\"\>", 
+   ",", "\<\"That\[CloseCurlyQuote]s Speedy!\"\>", 
+   ",", "\<\"Carter laughing.\"\>", 
+   ",", "\<\"Yes, that\[CloseCurlyQuote]s why.\"\>", 
+   ",", "\<\"And guess what?\"\>", ",", "\<\"Catch you later!\"\>", 
+   ",", "\<\"I think Im going\\ngive me a break!\"\>", 
+   ",", "\<\"He couldn't even guess.\"\>", 
+   ",", "\<\"He couldn't imagine it.\"\>", 
+   ",", "\<\"Fredle couldn't resist.\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.7081117869979486`*^9, 
+  3.7081118236455135`*^9},ExpressionUUID->"a1daf1fc-dba4-41a8-af49-\
+8fc4604b4a1b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FeatureSpacePlot", "[", 
+  RowBox[{
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"TextSentences", "[", 
+       RowBox[{"#", ",", "100"}], "]"}], "&"}], "@", "texts"}], "]"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+   RowBox[{"LabelingFunction", "\[Rule]", "Tooltip"}]}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQfb+RW3LagteO8lzTpEC00b9AcxB9JuatNYjeJOLj
+CqJv7A0C01dfqxSA6E8mE+tB9KQFuc0gOjBpB5jWzKtYDZZf2LcZRK9OX7MH
+RO+rtj0Eol2jslWmA+meSdvUQfQdXi0dEO0/NUwXRK+JVAgB0SUzV8eC6Dxn
+9iQQ/Y7nazKI5jm8Kx2s7mFvNoiW6ztbAKI/fPMpAdH35ihUgui3DRfBtL3j
+x3YQfe7M+i4QfW3SySUg2kFLdSmIlio7IjcD5E47dXkQLSKqXr0SSP/5o1wL
+ok9MnjgNRNseWg+mAS+2pqY=
+  "],ExpressionUUID->"953b4431-690a-452d-84ed-04ca060a45bc"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, 
+     {RGBColor[1, 0, 0], PointSize[0.007333333333333334], AbsoluteThickness[
+      1.6], PointBox[CompressedData["
+1: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
+       "]]}, {}}, {
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.7555681092940214`, 1.1540375201869104`}}]},
+       "\"I would like that, my dear.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I would like that, my dear.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.902528189463303, 1.4376909435932017`}}]},
+       "\"I would like to order  la carte.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I would like to order  la carte.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.7878454943836235`, 1.3449592291241368`}}]},
+       "\"I would like to compose a message.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I would like to compose a message.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4.32725909360803, 1.7786112281934052`}}]},
+       "\"Beautiful work.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Beautiful work.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4.262171326480387, 1.7165961544086272`}}]},
+       "\"This is beautiful.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "This is beautiful.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4.158862294045876, 1.5452877364441444`}}]},
+       "\"Its so beautiful, Ian.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Its so beautiful, Ian.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{5.028313462509319, -0.20780677162157749`}}]},
+       "\"Yes, yes it is.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Yes, yes it is.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.01917735019545321, 2.4710159144484884`}}]},
+       "\"OK, here it is.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "OK, here it is.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.0182534529970475`, 3.5252303020882683`}}]},
+       "\"It is very far.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is very far.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.9305635951480163, 2.496588140640421}}]},
+       "\"It is temporary.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is temporary.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.9305635951480161, 2.4965881406404202`}}]},
+       "\"It is important.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is important.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.9305635951480167, 2.496588140640421}}]},
+       "\"It is impossible.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is impossible.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.8644549217706673, 2.181835327918325}}]},
+       "\"I know where it is.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I know where it is.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.13030839083803003`, 1.7049309220631297`}}]},
+       "\"It is a nice feeling.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is a nice feeling.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.3635395121863065`, 1.0830219550732307`}}]},
+       "\"It is my video diary.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is my video diary.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.21806989996774664`, 1.8456107025525934`}}]},
+       "\"It is a simple matter.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is a simple matter.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.842499359775516, 2.171565915729442}}]},
+       "\"It isnt going to work.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It isnt going to work.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.16189516986570646`, 1.7288496319679498`}}]},
+       "\"It is a mental exercise.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is a mental exercise.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.1350897939876463`, 1.9125720271195874`}}]},
+       "\"It is good, she thought.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is good, she thought.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7998410344836977, 0.27001575574254744`}}]},
+       "\"Now we have no honey \\nMiss honey was happy \\nShe was big and \
+blue.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Now we have no honey \nMiss honey was happy \nShe was big and blue.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.3641312364828464`, -0.5809948399638916}}]},
+       "\"He snapped a picture.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He snapped a picture.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.6440433072000045`, 1.9080161333316763`}}]},
+       "\"The light is red now.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The light is red now.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.195927614026772, -0.9498066091153456}}]},
+       "\"Emily was coupled up.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Emily was coupled up.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.25535511574997455`, 4.091586062925674}}]},
+       "\"and I won\[IDoubleDot]t be wrong.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "and I won\[IDoubleDot]t be wrong.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{5.038110214781705, -0.15855538013663037`}}]},
+       "\"Why, yes, small bear.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Why, yes, small bear.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.5250583637928568, -0.11688622081232233`}}]},
+       "\"your friend the bee! \\nShe held up an X-ray.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "your friend the bee! \nShe held up an X-ray.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.783979803743024, 2.83573156372901}}]},
+       "\"They had better find \\nand felt very lonely.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "They had better find \nand felt very lonely.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.0298105898730854`, 2.5023868882181843`}}]},
+       "\"black and white dogs.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "black and white dogs.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7267510141635272, 0.8036203001214651}}]},
+       "\"\[OpenCurlyDoubleQuote]I\[CloseCurlyQuote]m sure we\
+\[CloseCurlyQuote]ve lost.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "\[OpenCurlyDoubleQuote]I\[CloseCurlyQuote]m sure \
+we\[CloseCurlyQuote]ve lost.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.2059282343628266`, 3.6204204978451475`}}]},
+       "\"The clock struck one.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The clock struck one.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.5356700912484076`, -4.206294775508869}}]},
+       "\"Do they dare?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Do they dare?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.03369052447977606, 0.8321430366283837}}]},
+       "\"Well \[IDoubleDot] \\n\[OpenCurlyDoubleQuote]A quarry?\
+\[CloseCurlyDoubleQuote] he cried.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Well \[IDoubleDot] \n\[OpenCurlyDoubleQuote]A quarry?\
+\[CloseCurlyDoubleQuote] he cried.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.9627566454900028, -3.8583635647783727`}}]},
+       "\"\[CloseCurlyDoubleQuote]\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "\[CloseCurlyDoubleQuote]", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.796242791757776, -0.9888134882193818}}]},
+       "\"He turned to James.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He turned to James.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.8689915285080596`, 2.9203758883611437`}}]},
+       "\"Duncan felt terrible.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Duncan felt terrible.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.3270604697902106`, 3.4419852522627568`}}]},
+       "\"we will go for honey.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "we will go for honey.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-0.48597104776626165`, 0.39840706710035534`}}]},
+       "\"What are you doing?\[CloseCurlyDoubleQuote] \\nBut that bee\
+\[IDoubleDot]s honey \\nThe big, scary thing \\nThe new engines said \\nHenry\
+\[CloseCurlyQuote]s steam scared \\nThomas acted quickly.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "What are you doing?\[CloseCurlyDoubleQuote] \nBut that bee\
+\[IDoubleDot]s honey \nThe big, scary thing \nThe new engines said \nHenry\
+\[CloseCurlyQuote]s steam scared \nThomas acted quickly.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.8848772516419285`, 2.5070083539139514`}}]},
+       "\"was at the store too.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "was at the store too.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.7119635541764273`, 1.1076507275852672`}}]},
+       "\"\[IDoubleDot]What is the matter? \\n\[IDoubleDot]Who took that \
+bone?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "\[IDoubleDot]What is the matter? \n\[IDoubleDot]Who took that bone?", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.2039075419369354`, 1.1648070495455594`}}]},
+       "\"Who took it?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Who took it?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.0546095569563378`, -2.686574642033789}}]},
+       "\"Where?\[IDoubleDot] \\nIt\[IDoubleDot]s long past lunch.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Where?\[IDoubleDot] \nIt\[IDoubleDot]s long past lunch.",
+        "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.7577192341621197`, -0.6878451651984022}}]},
+       "\"when I was in school.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "when I was in school.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.7835241761244118`, 2.8248502071599595`}}]},
+       "\"Percy felt flattered.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Percy felt flattered.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.406571582824744, -4.120160219947104}}]},
+       "\"Do they dare go into \\n\[CloseCurlyDoubleQuote]\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Do they dare go into \n\[CloseCurlyDoubleQuote]", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.1268469229427978`, 3.522632704529576}}]},
+       "\"He whirled his arms\\nThe clock struck two.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He whirled his arms\nThe clock struck two.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.2165885285071059`, -1.0511600632945153`}}]},
+       "\"He taught Sam tricks.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He taught Sam tricks.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.987056256511852, 0.14336201875200144`}}]},
+       "\"\[IDoubleDot]Why, yes,\[IDoubleDot] she said.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "\[IDoubleDot]Why, yes,\[IDoubleDot] she said.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.4240444597654319, -0.6319274347158964}}]},
+       "\"They went for a walk.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "They went for a walk.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{0.12339830100669705`, -0.41800047451645805`}}]},
+       "\"It\[IDoubleDot]s warm here, too! \\nDo not play up there.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "It\[IDoubleDot]s warm here, too! \nDo not play up there.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.2074460261994863, 1.0648687131559145`}}]},
+       "\"last night!\[CloseCurlyDoubleQuote] he says.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "last night!\[CloseCurlyDoubleQuote] he says.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.5214943046982788, -0.9666039341555849}}]},
+       "\"\[OpenCurlyDoubleQuote]Hullo!\[CloseCurlyDoubleQuote] said \
+Harold.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "\[OpenCurlyDoubleQuote]Hullo!\[CloseCurlyDoubleQuote] said Harold.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.9125078068463712`, 1.0668964500297347`}}]},
+       "\"Ted flew upside down.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ted flew upside down.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.019250357965819, -1.41282404895578}}]},
+       "\"But Henry was afraid.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "But Henry was afraid.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.4569775673085976`, -0.6724951544779962}}]},
+       "\"Owl was very excited.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Owl was very excited.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.8503181563967388`, 2.326058357685352}}]},
+       "\"Then lowly whispered \\nred dogs, blue dogs, \\nSnow started to \
+fall.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Then lowly whispered \nred dogs, blue dogs, \nSnow started to fall.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.823525328002354, 1.3541197976815766`}}]},
+       "\"read like Beaver can.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "read like Beaver can.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7397242673613909, 0.2025434960519823}}]},
+       "\"right in those trees.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "right in those trees.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.4989099015840939`, 0.9340780573551171}}]},
+       "\"like it in busytown! \\nGordon took the lead.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "like it in busytown! \nGordon took the lead.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.049237304312651706`, -6.469699991842975}}]},
+       "\"\[OpenCurlyDoubleQuote]\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "\[OpenCurlyDoubleQuote]", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.2911114621149516, 4.922807752793869}}]},
+       "\"elp!\[CloseCurlyDoubleQuote] cried Thomas.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "elp!\[CloseCurlyDoubleQuote] cried Thomas.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.148451746275033, 2.205711454998632}}]},
+       "\"But Thomas cannot go.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "But Thomas cannot go.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.26889397851881625`, 0.6304177552026635}}]},
+       "\"in a pie-eating race.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "in a pie-eating race.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.8591068136437887`, 2.9935006136219933`}}]},
+       "\"Thomas felt very sad.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Thomas felt very sad.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.1702350678478257, 0.4685593425620989}}]},
+       "\"if a bear is bright, \\nif a bear knows how, \\n\
+\[OpenCurlyDoubleQuote]You must come now!\[CloseCurlyDoubleQuote] \\n\
+\[OpenCurlyDoubleQuote]Ready, steady, GO!\[CloseCurlyDoubleQuote] \\ninto the \
+dark tunnel.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "if a bear is bright, \nif a bear knows how, \n\
+\[OpenCurlyDoubleQuote]You must come now!\[CloseCurlyDoubleQuote] \n\
+\[OpenCurlyDoubleQuote]Ready, steady, GO!\[CloseCurlyDoubleQuote] \ninto the \
+dark tunnel.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.7512979707868024`, 0.616674518247573}}]},
+       "\"in the shopping cart.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "in the shopping cart.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.1412147226460946, 0.8781159313941267}}]},
+       "\"Percy opens his eyes.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Percy opens his eyes.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.19291400618711657`, 0.5463236636128104}}]},
+       "\"Three little bears \[IDoubleDot] \\n\[OpenCurlyDoubleQuote]I think \
+they must be\\nIf a bear knows how, \\nPercy hears a rumble.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Three little bears \[IDoubleDot] \n\[OpenCurlyDoubleQuote]I think \
+they must be\nIf a bear knows how, \nPercy hears a rumble.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.0490198141764958, 1.3141230478394887`}}]},
+       "\"\[OpenCurlyDoubleQuote]Pah!\[CloseCurlyDoubleQuote] snorted \
+James.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "\[OpenCurlyDoubleQuote]Pah!\[CloseCurlyDoubleQuote] snorted James.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.26286363242165584`, 0.7024215224230917}}]},
+       "\"\[OpenCurlyDoubleQuote]I must be on time!\[CloseCurlyDoubleQuote] \
+\\nSoon lowly and willy \
+\\n\[OpenCurlyDoubleQuote]Why?\[CloseCurlyDoubleQuote] huffed Thomas.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "\[OpenCurlyDoubleQuote]I must be on time!\[CloseCurlyDoubleQuote] \n\
+Soon lowly and willy \n\[OpenCurlyDoubleQuote]Why?\[CloseCurlyDoubleQuote] \
+huffed Thomas.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.049250625583508095`, -6.469618991982674}}]},
+       "\"\[OpenCurlyDoubleQuote]\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "\[OpenCurlyDoubleQuote]", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.11672313055701107`, -0.6964542473818626}}]},
+       "\"want a washdown!\[CloseCurlyDoubleQuote] \\nBear came to see him.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "want a washdown!\[CloseCurlyDoubleQuote] \nBear came to see him.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.642204117360944, 0.36749297844765716`}}]},
+       "\"Fred missed the ball.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Fred missed the ball.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.754852659473831, -0.15797333422494908`}}]},
+       "\"Thomas was all alone.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Thomas was all alone.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.2956407521497209, 4.969864736417125}}]},
+       "\"\[OpenCurlyDoubleQuote]Oh, no!\[CloseCurlyDoubleQuote] they \
+cried.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "\[OpenCurlyDoubleQuote]Oh, no!\[CloseCurlyDoubleQuote] they cried.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.18467891091503666`, 0.3345784848916532}}]},
+       "\"played with huckle\[IDoubleDot]s \\nplease, pop, please, \\nnot \
+friends with the \\nThomas left the Yard.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "played with huckle\[IDoubleDot]s \nplease, pop, please, \nnot friends \
+with the \nThomas left the Yard.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.049237304326054374`, -6.469699991633309}}]},
+       "\"\[OpenCurlyDoubleQuote]\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "\[OpenCurlyDoubleQuote]", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.14280700234874705`, -0.9020041949671377}}]},
+       "\"do not want a dog.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "do not want a dog.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-3.5709035631480797`, -0.46788109299033936`}}]},
+       "\"Thomas was surprised.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Thomas was surprised.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.3389812075037173`, 3.513718674203749}}]},
+       "\"I will get you honey.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I will get you honey.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.4169579168461555`, -1.2477965334200025`}}]},
+       "\"James was behind him.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "James was behind him.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.2486576582115543`, -0.4637547652777484}}]},
+       "\"Thomas was in ahurry.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Thomas was in ahurry.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.4710935604051537, 0.7423389706670156}}]},
+       "\"\[OpenCurlyDoubleQuote]Watch out, Thomas!\[CloseCurlyDoubleQuote] \
+\\nNow Thomas must help \\nAnd you did not ring \\n\[OpenCurlyDoubleQuote]It \
+just disappeared.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "\[OpenCurlyDoubleQuote]Watch out, Thomas!\[CloseCurlyDoubleQuote] \n\
+Now Thomas must help \nAnd you did not ring \n\[OpenCurlyDoubleQuote]It just \
+disappeared.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.049202754911681294`, -6.469739392996407}}]},
+       "\"\[OpenCurlyDoubleQuote]\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "\[OpenCurlyDoubleQuote]", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.5534201792201807, 0.8160998762083141}}]},
+       "\"low, little engine.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "low, little engine.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7621287438707754, 1.938845608466939}}]},
+       "\"Thomas could not see.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Thomas could not see.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.6668283468735892, 0.2995954523850627}}]},
+       "\"He dusted the dust \[IDoubleDot] \\nThe whole class sang \\nthey \
+played together \\n\[OpenCurlyDoubleQuote]\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "He dusted the dust \[IDoubleDot] \nThe whole class sang \nthey played \
+together \n\[OpenCurlyDoubleQuote]", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.3099650873507179, -1.1599847567491628`}}]},
+       "\"oo bad,\[CloseCurlyDoubleQuote] they said.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "oo bad,\[CloseCurlyDoubleQuote] they said.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.62591971497823, 1.7159370015260982`}}]},
+       "\"They began to giggle.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "They began to giggle.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.6404175652716013`, 2.912795932793069}}]},
+       "\"he hopped some more!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "he hopped some more!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.2989335272001686, 5.021956667905697}}]},
+       "\"\[OpenCurlyDoubleQuote]Oh no!\[CloseCurlyDoubleQuote] cries \
+Percy.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "\[OpenCurlyDoubleQuote]Oh no!\[CloseCurlyDoubleQuote] cries Percy.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.049232261418753955`, -6.469732160750473}}]},
+       "\"\[OpenCurlyDoubleQuote]\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "\[OpenCurlyDoubleQuote]", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.02862736335656711, 0.6920315799725009}}]},
+       "\"on\[CloseCurlyQuote]t I look fine?\[CloseCurlyDoubleQuote] \\nis \
+missing in there!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "on\[CloseCurlyQuote]t I look fine?\[CloseCurlyDoubleQuote] \nis \
+missing in there!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.4081685988483348, -0.6353087724713373}}]},
+       "\"That lump of ground\[IDoubleDot] \\n\[OpenCurlyDoubleQuote]Wheesh,\
+\[CloseCurlyDoubleQuote] said Henry.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "That lump of ground\[IDoubleDot] \n\[OpenCurlyDoubleQuote]Wheesh,\
+\[CloseCurlyDoubleQuote] said Henry.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.3642757864965236`, 1.4098935781457163`}}]},
+       "\"So Franklin asked Mr.\\n\[OpenCurlyDoubleQuote]Show a wheel, James.\
+\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "So Franklin asked Mr.\n\[OpenCurlyDoubleQuote]Show a wheel, James.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.468050628873442, 1.4205713244408984`}}]},
+       "\"Franklin didn\[CloseCurlyQuote]t mind.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Franklin didn\[CloseCurlyQuote]t mind.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.970111930743184, 2.6300896675980434`}}]},
+       "\"from the honey store.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "from the honey store.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-1.2719644060674227`, 0.057840603613366876`}}]},
+       "\"He found the perfect \\nToby rushed past him.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He found the perfect \nToby rushed past him.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.0235840922591535`, 0.6312171675922302}}]},
+       "\"Victor and Kevin gave\\nthis looks just like \\nTed was in the \
+shade.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Victor and Kevin gave\nthis looks just like \nTed was in the shade.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.9512478007925079, 0.5388232795351072}}]},
+       "\"the milk and cookies \\nhuckle and lowly got \\nhuckle ran to \
+school.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "the milk and cookies \nhuckle and lowly got \nhuckle ran to school.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.913230577567306, 1.2882543961723536`}}]},
+       "\"And it feels just so.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And it feels just so.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.9825007252489932`, -1.0065582805255815`}}]},
+       "\"That\[CloseCurlyQuote]s Speedy!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "That\[CloseCurlyQuote]s Speedy!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.4877536511285003`, -4.3555218006126175`}}]},
+       "\"Carter laughing.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Carter laughing.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{5.061477557319663, -0.29105163519297594`}}]},
+       "\"Yes, that\[CloseCurlyQuote]s why.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Yes, that\[CloseCurlyQuote]s why.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.23186976378348745`, 1.2293362859026584`}}]},
+       "\"A talking bird!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "A talking bird!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.8427745113841625`, 0.1905026602301794}}]},
+       "\"Oh, that\[CloseCurlyQuote]s easy.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Oh, that\[CloseCurlyQuote]s easy.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.860745104966124, -0.8895501655235217}}]},
+       "\"I have to know!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I have to know!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.95166824723129, -3.3300716432220807`}}]},
+       "\"Why do you ask? \\nCarter, laughing.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Why do you ask? \nCarter, laughing.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.2215501042592687`, 1.5048873466321429`}}]},
+       "\"It\[CloseCurlyQuote]s only a game.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It\[CloseCurlyQuote]s only a game.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.337798207696217, -0.5414667696902147}}]},
+       "\"I have to go now.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I have to go now.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.4224931613953458`, -0.16899749710104145`}}]},
+       "\"I am a miningman.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I am a miningman.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.6369922390593215`, -0.5695678385594417}}]},
+       "\"There was nothing\\nI was going down.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "There was nothing\nI was going down.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7766518587087416, 0.65987437987939}}]},
+       "\"Cherry dumplings.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Cherry dumplings.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7509043984395057, 2.7306804048535573`}}]},
+       "\"But it\[CloseCurlyQuote]s moving!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "But it\[CloseCurlyQuote]s moving!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{5.083214834291958, -0.6452214952000352}}]},
+       "\"That\[CloseCurlyQuote]s all right.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "That\[CloseCurlyQuote]s all right.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.739428026179692, -1.7956973809796601`}}]},
+       "\"Someone\[CloseCurlyQuote]s coming.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Someone\[CloseCurlyQuote]s coming.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.5172827496832113`, -4.310605857469563}}]},
+       "\"Alden, laughing .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Alden, laughing .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{5.118837924791722, -0.5941970875036152}}]},
+       "\"That\[CloseCurlyQuote]s right now.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "That\[CloseCurlyQuote]s right now.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.23633287997134, -0.4634332729008899}}]},
+       "\"Let\[CloseCurlyQuote]s buy things.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Let\[CloseCurlyQuote]s buy things.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.4784800118532835`, -4.339288957236013}}]},
+       "\"Fenton, laughing.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Fenton, laughing.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.034074693458075, -2.8841753608225558`}}]},
+       "\"Stop this minute.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Stop this minute.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7482218182023522, 0.17635324350791226`}}]},
+       "\"Rivers, smiling .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Rivers, smiling .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.1338100238975902, 3.1959190146092458`}}]},
+       "\"We must catch y! \\nLet\[CloseCurlyQuote]s live here!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "We must catch y! \nLet\[CloseCurlyQuote]s live here!", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.3938750691159547`, -3.4173098338526486`}}]},
+       "\"How do you know?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How do you know?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.10260585916380997`, 1.57165653561866}}]},
+       "\"I\[CloseCurlyQuote]ll bring it up.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I\[CloseCurlyQuote]ll bring it up.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7646660756707874, 2.253847992102241}}]},
+       "\"He is ringing it.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He is ringing it.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.2387366439955032`, 4.386714490725795}}]},
+       "\"No, it\[CloseCurlyQuote]s too far.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "No, it\[CloseCurlyQuote]s too far.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.8422407863243007`, -3.88766971337841}}]},
+       "\"I hear something.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I hear something.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.14728304743356, -2.6616152398759865`}}]},
+       "\"Hill, looking up.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Hill, looking up.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.821308222720282, -1.8918633086243812`}}]},
+       "\"He was thinking .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He was thinking .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.5628897231179413`, -0.5820146518642242}}]},
+       "\"Let\[CloseCurlyQuote]s have beans.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Let\[CloseCurlyQuote]s have beans.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.570921169024573, -3.28749415618842}}]},
+       "\"What do you know!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What do you know!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.7607272893986248`, 0.10549382458078652`}}]},
+       "\"The talking horse.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The talking horse.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.1296940031131446`, 2.4895861996586426`}}]},
+       "\"He must have some.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He must have some.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.8226473192326096`, -2.9797476148389763`}}]},
+       "\"What do you think?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What do you think?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7015338553798816, 2.2716748590991456`}}]},
+       "\"It is boiling hot.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It is boiling hot.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.5745918694449073`, -2.176574862981289}}]},
+       "\"What is he doing?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What is he doing?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.279130511811879, 3.1532986459850094`}}]},
+       "\"Maybe for nothing.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Maybe for nothing.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.1076556454801567`, -2.5789161138662715`}}]},
+       "\"Where do you live?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Where do you live?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7556518461519988, -2.2737574935938203`}}]},
+       "\"He\[CloseCurlyQuote]s the engineer.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He\[CloseCurlyQuote]s the engineer.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.5258130692599852`, 1.988262947610456}}]},
+       "\"Now ring the bell.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Now ring the bell.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.2807120243683374`, 4.4185436648693335`}}]},
+       "\"Yes, it\[CloseCurlyQuote]s too bad.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Yes, it\[CloseCurlyQuote]s too bad.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.178028628653703, 0.11975565519743031`}}]},
+       "\"He pushed his thin\\nIt\[CloseCurlyQuote]s getting late.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He pushed his thin\nIt\[CloseCurlyQuote]s getting late.",
+        "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.123644397189706, 0.5978734140080334}}]},
+       "\"So please show us.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "So please show us.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.771702413060884, -2.165137205042175}}]},
+       "\"He\[CloseCurlyQuote]s going crazy! \\nHe\[CloseCurlyQuote]s gone, \
+anyway.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "He\[CloseCurlyQuote]s going crazy! \nHe\[CloseCurlyQuote]s gone, \
+anyway.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.5239450880407176, -0.13126643237010271`}}]},
+       "\"I don\[CloseCurlyQuote]t have to go\\nIf he sinks, fine.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I don\[CloseCurlyQuote]t have to go\nIf he sinks, fine.",
+        "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.596424441566243, -2.5603562275344482`}}]},
+       "\"What do you mean?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What do you mean?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.2044306234132505`, -0.7621540580069732}}]},
+       "\"I\[CloseCurlyQuote]m going to stop.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I\[CloseCurlyQuote]m going to stop.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.8380882531387046, 1.9737894158560998`}}]},
+       "\"You must be tired.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "You must be tired.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.9055519947249321, -0.455617965865618}}]},
+       "\"I\[CloseCurlyQuote]m going to fix a\\nCome on, \
+let\[CloseCurlyQuote]s go.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "I\[CloseCurlyQuote]m going to fix a\nCome on, let\[CloseCurlyQuote]s \
+go.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.2054096449039293`, -3.195140580556133}}]},
+       "\"What\[CloseCurlyQuote]s your name? \\nCarter, frowning .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What\[CloseCurlyQuote]s your name? \nCarter, frowning .",
+        "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.5023081218545329`, 2.033082219359228}}]},
+       "\"How much would you\\nLet\[CloseCurlyQuote]s get to work.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How much would you\nLet\[CloseCurlyQuote]s get to work.",
+        "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.7404750909913493`, 3.8238930533561573`}}]},
+       "\"Cook, getting out.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Cook, getting out.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.5147904944080443, 0.1138281141258681}}]},
+       "\"Do you mind, Joe? \\nwe must have salt.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Do you mind, Joe? \nwe must have salt.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{5.090738749570133, -0.42815872902339275`}}]},
+       "\"Yes, that\[CloseCurlyQuote]s right.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Yes, that\[CloseCurlyQuote]s right.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.5823519070869845, 1.4253998998630066`}}]},
+       "\"It\[CloseCurlyQuote]s Delbert King.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It\[CloseCurlyQuote]s Delbert King.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.7483362642289777`, 0.10985593586637235`}}]},
+       "\"here\[CloseCurlyQuote]s the island.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "here\[CloseCurlyQuote]s the island.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.4783259900909707`, -4.330545399621172}}]},
+       "\"Carter, laughing .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Carter, laughing .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.1581644013621793, 0.6734100056933435}}]},
+       "\"Not if its closed.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Not if its closed.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.5568337835680492`, -4.32797738555508}}]},
+       "\"Alden, getting up.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Alden, getting up.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.7394280261796915`, -1.7956973809796597`}}]},
+       "\"Somebody\[CloseCurlyQuote]s coming.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Somebody\[CloseCurlyQuote]s coming.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.8573580566687022`, 4.451897451020629}}]},
+       "\"Can you disarm it?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Can you disarm it?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-0.0023376586365165125`, -0.24529540817839585`}}]},
+       "\"I should say if we\\nWhere\[CloseCurlyQuote]s Snowball?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I should say if we\nWhere\[CloseCurlyQuote]s Snowball?", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.573549920080867, -1.8852747429344605`}}]},
+       "\"What shall we do? \\nit\[CloseCurlyQuote]s coming soon?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What shall we do? \nit\[CloseCurlyQuote]s coming soon?", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.9443130852755492`, -0.8804786505472082}}]},
+       "\"We need a shingle.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "We need a shingle.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{4.890720829364165, -0.8162302645222147}}]},
+       "\"That\[CloseCurlyQuote]s all I care.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "That\[CloseCurlyQuote]s all I care.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.9064239499500655`, -3.0905394554534906`}}]},
+       "\"What do you smell?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What do you smell?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.615567972811095, -1.1498776096827932`}}]},
+       "\"It\[CloseCurlyQuote]s never locked.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It\[CloseCurlyQuote]s never locked.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.5781242666755028, -0.8483596096162095}}]},
+       "\"I\[CloseCurlyQuote]m pushing, too! \\nHe\[CloseCurlyQuote]s a good \
+farmer.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "I\[CloseCurlyQuote]m pushing, too! \nHe\[CloseCurlyQuote]s a good \
+farmer.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.4760187868157515`, 2.8551297632531307`}}]},
+       "\"When is the wedding\\nThen get some more.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "When is the wedding\nThen get some more.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.7378903090778053`, -0.8817515793096283}}]},
+       "\"I have to find him.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I have to find him.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.28529454603246096`, 4.207411847530214}}]},
+       "\"And if youre wrong?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And if youre wrong?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.6711212719443854, 0.609708186730594}}]},
+       "\"That\[CloseCurlyQuote]s poison ivy! \\nEating with spoons.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "That\[CloseCurlyQuote]s poison ivy! \nEating with spoons.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.797427011963741, -3.8862571962067007`}}]},
+       "\"Let\[CloseCurlyQuote]s do something.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Let\[CloseCurlyQuote]s do something.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.6887891339686031, 1.4994822476882899`}}]},
+       "\"If it worked once .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "If it worked once .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.5322831593206785`, -2.1357111220093277`}}]},
+       "\"You\[CloseCurlyQuote]ll have to take\\nWhere do you think?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "You\[CloseCurlyQuote]ll have to take\nWhere do you think?", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.8103496742803952, -2.2672326092882145`}}]},
+       "\"He\[CloseCurlyQuote]s very friendly.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He\[CloseCurlyQuote]s very friendly.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.617548957364771, -2.886805880205831}}]},
+       "\"Do you own the van?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Do you own the van?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.4089025978970375`, -0.6000754679370879}}]},
+       "\"I have to tell her.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I have to tell her.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.7102082224451174`, -0.8773999506459944}}]},
+       "\"I have what I need.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I have what I need.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.3761264085258267`, -3.5901180068827014`}}]},
+       "\"How would you know?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How would you know?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.8573580566687022`, 4.451897451020629}}]},
+       "\"Can you enhance it?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Can you enhance it?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.8573580566687022`, 4.451897451020629}}]},
+       "\"Can you believe it?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Can you believe it?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.9426549103524648, -3.4348254937145746`}}]},
+       "\"Let\[CloseCurlyQuote]s ask this one.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Let\[CloseCurlyQuote]s ask this one.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.7324695238616523`, 4.306254280474006}}]},
+       "\"Can you get it out?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Can you get it out?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.38248591221008, -3.2843760590805253`}}]},
+       "\"How do you know my \\nDo you know Larry?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How do you know my \nDo you know Larry?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.1832688992321685`, -0.783823335207986}}]},
+       "\"Let\[CloseCurlyQuote]s go, said Sam.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Let\[CloseCurlyQuote]s go, said Sam.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.1320928944406794, 0.09405522027633509}}]},
+       "\"How do you do, Mrs.\\nIf I have a future.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How do you do, Mrs.\nIf I have a future.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.755064867461502, -3.001892579018698}}]},
+       "\"What do you do now?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What do you do now?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.4030916243435085`, -1.382975489131662}}]},
+       "\"That\[CloseCurlyQuote]s the mystery.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "That\[CloseCurlyQuote]s the mystery.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7000630209817263, -0.25829976815125566`}}]},
+       "\"Come on, let\[CloseCurlyQuote]s go! \\nThat\[CloseCurlyQuote]s what \
+I said.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Come on, let\[CloseCurlyQuote]s go! \nThat\[CloseCurlyQuote]s what I \
+said.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.9948473347833884, -1.9729400623447793`}}]},
+       "\"Do you understand? \\nHe\[CloseCurlyQuote]s just for cubs.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Do you understand? \nHe\[CloseCurlyQuote]s just for cubs.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.11550391435489055`, 2.916157628538191}}]},
+       "\"We\[CloseCurlyQuote]re celebrating!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "We\[CloseCurlyQuote]re celebrating!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.837343094914637, -1.4014947063356662`}}]},
+       "\"But he was joking .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "But he was joking .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.0028913037497946`, 3.4960706343255223`}}]},
+       "\"If it got that far.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "If it got that far.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.6251039086335735`, 2.911985577357449}}]},
+       "\"You play some more.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "You play some more.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.14954882502463465`, 0.8737735620961755}}]},
+       "\"It\[CloseCurlyQuote]s a flying fish.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It\[CloseCurlyQuote]s a flying fish.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.6070498091766336`, -0.8270948397069394}}]},
+       "\"I have to see Mike.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I have to see Mike.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.20527484131219798`, 0.14497091520357902`}}]},
+       "\"If I'd  been a boy \\nJust go on packing.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "If I'd  been a boy \nJust go on packing.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.7902318545911875`, -0.4151895846764412}}]},
+       "\"I bet it\[CloseCurlyQuote]s nothing.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I bet it\[CloseCurlyQuote]s nothing.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.612263723882522, -2.0284570409429783`}}]},
+       "\"That\[CloseCurlyQuote]s what I mean.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "That\[CloseCurlyQuote]s what I mean.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.363841416199723, -4.683323064654042}}]},
+       "\"And guess what?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And guess what?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.23768562150378977`, 3.6550277737490253`}}]},
+       "\"Catch you later!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Catch you later!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.2880746723477361, 0.694533907454079}}]},
+       "\"I think Im going\\ngive me a break!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I think Im going\ngive me a break!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.445631033976349, 0.6068787385879891}}]},
+       "\"I think so, sir.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I think so, sir.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.2606969745310361`, 2.846268603856147}}]},
+       "\"Very much alive.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Very much alive.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.433194913181072, -3.4540371973000945`}}]},
+       "\"Do you know why?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Do you know why?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7782080262468728, -1.608851289519614}}]},
+       "\"Dont give it up.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Dont give it up.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.6047888485974583, -0.5998743284920302}}]},
+       "\"We shouldnt live\\nThanks, I think.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "We shouldnt live\nThanks, I think.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.8770543270035359, -2.8446415273703485`}}]},
+       "\"First, I've made\\nHow long, Foaly?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "First, I've made\nHow long, Foaly?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.16035408167042958`, -3.3773440887808337`}}]},
+       "\"I see, said Ian.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I see, said Ian.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.177343643179057, 0.5579469758140151}}]},
+       "\"Not yet anyway .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Not yet anyway .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.2515128956744478, 2.08188229926791}}]},
+       "\"Ill be here, Mr.\\nalive to see it!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ill be here, Mr.\nalive to see it!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.9114106253434029, 0.5518834833344649}}]},
+       "\"Ama was the only\\nHe looked tired;\\nThey never see it\\nThank you \
+anyway.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Ama was the only\nHe looked tired;\nThey never see it\nThank you \
+anyway.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.95301367047427, 0.6338756204519632}}]},
+       "\"Hold you captive.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Hold you captive.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.1758124693394592, 2.1694584678184157`}}]},
+       "\"Sometimes I think\\nIt will be grand!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Sometimes I think\nIt will be grand!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.461049932866217, -3.15222695297625}}]},
+       "\"But for how long?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "But for how long?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.424402785809984, -1.2446561536796201`}}]},
+       "\"The drI've to Mr.\\nFinally, he said.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The drI've to Mr.\nFinally, he said.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.805983381924311, 1.8700200923265697`}}]},
+       "\"I already looked.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I already looked.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.0703220425516895`, 2.2108412202856393`}}]},
+       "\"Your objective is\\nThat will be all.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Your objective is\nThat will be all.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.8493214707560925`, 3.168032887405758}}]},
+       "\"They looked down.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "They looked down.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.471381889440093, -3.400542437798076}}]},
+       "\"Do you know that?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Do you know that?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.5707586597886252, -0.07979424234336836}}]},
+       "\"conclusive frown.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "conclusive frown.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.1367447947171385`, 1.8951362408500751`}}]},
+       "\"He looked around.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He looked around.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.260650716057945, 1.886445855278746}}]},
+       "\"He looked uneasy.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He looked uneasy.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.819968966856505, 1.9442696622813163`}}]},
+       "\"He looked at Mrs.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He looked at Mrs.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.367716934312124, -4.685603393010976}}]},
+       "\"Well, guess what?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Well, guess what?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.396848126066607, -1.6803783096774976`}}]},
+       "\"II'verified them!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "II'verified them!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.106072106411679, 1.751818606104819}}]},
+       "\"He looked anyway.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He looked anyway.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.2578978422926524, -0.2996631975935875}}]},
+       "\"I see we have an \\nI understand, JW.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I see we have an \nI understand, JW.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.565807780596231, -2.440863106083807}}]},
+       "\"Will Connor live?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Will Connor live?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.573388320652705, -3.050847296497268}}]},
+       "\"I think I gotta  \\nAs long as I live.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I think I gotta  \nAs long as I live.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.410633375381608, -3.3545919892442897`}}]},
+       "\"What have you got?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What have you got?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.792422366455649, 0.6324413563389009}}]},
+       "\"Im a captive, sir.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Im a captive, sir.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.2884085148744013`, -2.7258883294878316`}}]},
+       "\"The only practical\\nDo you understand?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The only practical\nDo you understand?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.27220271688516, 0.6245824458071084}}]},
+       "\"Anyway, the moment\\nI hope so, anyway.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Anyway, the moment\nI hope so, anyway.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7766518587087452, 0.6598743798794868}}]},
+       "\"decidedly nervous.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "decidedly nervous.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.5666063688036806, -1.3714491812084633`}}]},
+       "\"giveyourselves up!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "giveyourselves up!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.6229201313219805`, 0.8270400362478859}}]},
+       "\"Big time, I think.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Big time, I think.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.4101572874043753`, 4.32496534663391}}]},
+       "\"Ill be right back!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ill be right back!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.3149511159797787`, 4.2865737811671805`}}]},
+       "\"Ill be brainswept!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ill be brainswept!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.47301814986347057`, 2.5537492023004864`}}]},
+       "\"But you are alive!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "But you are alive!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.420381488900885, 4.309853761868615}}]},
+       "\"Ill be right back.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ill be right back.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.470954982808825, -4.155762240123706}}]},
+       "\"And the only thing\\nWhat happened, 85?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And the only thing\nWhat happened, 85?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.606913012164605, 0.3975403221629091}}]},
+       "\"Its locked anyway.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Its locked anyway.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.5047025393181395`, -2.8883763251618375`}}]},
+       "\"You do understand?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "You do understand?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.922958879681943, 3.0396679214707314`}}]},
+       "\"Ill be your guide.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ill be your guide.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.11087156281189821`, -3.510731032618226}}]},
+       "\"Ian finally asked.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ian finally asked.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.33764813915337016`, 3.454192939585101}}]},
+       "\"Ill see you later.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ill see you later.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.5485213202165962, 3.6807135265744884`}}]},
+       "\"We can talk later.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "We can talk later.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.867928266994886, -2.249826122706633}}]},
+       "\"It seems I've been\\nYou misunderstand.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It seems I've been\nYou misunderstand.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.9210073104000615, 3.4409175853019702`}}]},
+       "\"Ill be very quiet.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ill be very quiet.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.911181428071008, 1.924893873901381}}]},
+       "\"And he looked old!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And he looked old!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.7984144438852192`, -3.302268691617684}}]},
+       "\"How have you been?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How have you been?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.476452661895159, 0.7255110855794908}}]},
+       "\"the podcam anyway.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "the podcam anyway.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-0.18854029691426827`, -1.4273369933686426`}}]},
+       "\"Finally, one came.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Finally, one came.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-0.37768871479960253`, -1.7118469001284944`}}]},
+       "\"Finally, he spoke.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Finally, he spoke.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.220477462864575, 0.6087693402110519}}]},
+       "\"Polaroid, I think.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Polaroid, I think.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.6770080600910284`, -0.4545469932588568}}]},
+       "\"I think we need to\\nPlease forgive Dr.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I think we need to\nPlease forgive Dr.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.69734160332744, -1.9539324293690363`}}]},
+       "\"How shall we live?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How shall we live?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.640507610191146, -2.3185276505337713`}}]},
+       "\"He didnt survI've.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He didnt survI've.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.344503703205399, 0.5799415162429878}}]},
+       "\"Or anyway, Im not.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Or anyway, Im not.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.9030133275651115`, -0.2932149410477127}}]},
+       "\"Once shed arrI'ved\\nShiver me timbers!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Once shed arrI'ved\nShiver me timbers!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.6163227825017934`, -0.522392627906089}}]},
+       "\"I think I saw her.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I think I saw her.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-0.32253678715212303`, -1.9216120359903943`}}]},
+       "\"Finally, shebegan.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Finally, shebegan.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.09378477452980778, 2.7374084504440157`}}]},
+       "\"I think Ill stand.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I think Ill stand.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.0093416536193667`, 1.761147926552567}}]},
+       "\"I paced nervously.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I paced nervously.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.4557352012099789, -1.7898782345022668`}}]},
+       "\"Finally he sighed.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Finally he sighed.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7970516597268644, -1.5825765302133579`}}]},
+       "\"I dont understand.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I dont understand.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.4306570198263319, -1.486654281130338}}]},
+       "\"Finally I want No.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Finally I want No.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.8466024765970595`, 1.74642343209376}}]},
+       "\"I think were good.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I think were good.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.5648177655316298`, 0.5872379006393298}}]},
+       "\"I understand, sir.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I understand, sir.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.283606311511581, 0.44785373973887305`}}]},
+       "\"Not alone, anyway.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Not alone, anyway.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.3507115984864609, -1.7467770580529425`}}]},
+       "\"Finally she said: \\nfinally managed it.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Finally she said: \nfinally managed it.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.4557100643102333, -1.7876960385455307`}}]},
+       "\"he finally shouted.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "he finally shouted.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.468478810031937, -1.3250262738828475`}}]},
+       "\"I never said I did.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I never said I did.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.509256961210152, -3.411901357832667}}]},
+       "\"What have you done?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What have you done?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.8923962873051374, 0.8936379033657027}}]},
+       "\"Were fugitives, Mr.\\nWill looked around,\\nShew you all alive \
+\\nShe looked at Will.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Were fugitives, Mr.\nWill looked around,\nShew you all alive \nShe \
+looked at Will.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.0751427839423546`, 1.8334084651928677`}}]},
+       "\"Mum looked abashed.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Mum looked abashed.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.3077696294354095`, 1.083169484306308}}]},
+       "\"Who are you anyway?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Who are you anyway?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.14237894388450503`, -3.325123043218633}}]},
+       "\"I see, said Butler.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I see, said Butler.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.855037774042347, 3.1720121753182946`}}]},
+       "\"Reynie looked down.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Reynie looked down.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.4644326093314745, -2.689326467920616}}]},
+       "\"Why didnt I see it?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Why didnt I see it?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.2543084306625778, -1.2518204128552988`}}]},
+       "\"And then I see him.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And then I see him.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.493765219314801, -1.3048459437925597`}}]},
+       "\"I never think that.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I never think that.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.5461585657344274`, -1.3802477249260134`}}]},
+       "\"He never complains.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He never complains.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.5093260198945764`, -3.4121300904033895`}}]},
+       "\"What have you seen?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What have you seen?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.6205461913410626`, -3.087910364982752}}]},
+       "\"As long as I live .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "As long as I live .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.5151063174037264, -4.381699931321835}}]},
+       "\"Ian, what happened?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Ian, what happened?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.419001039127856, 0.5723455832555567}}]},
+       "\"Wild boar, I think.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Wild boar, I think.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.6416606853903972`, 4.2359665157699435`}}]},
+       "\"live out in fields?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "live out in fields?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.9930698255050463`, -2.301328165931004}}]},
+       "\"I've been thinking.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I've been thinking.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.4172328573923344, -2.8938219071289533`}}]},
+       "\"May I see it again?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "May I see it again?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.5533924508508586, -4.446102890753033}}]},
+       "\"Then what happened?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Then what happened?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7532460556569819, 0.3455789219537183}}]},
+       "\"How do you know my \\nI think so, Butler.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How do you know my \nI think so, Butler.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.5385560508479053`, -3.0137251594382}}]},
+       "\"How long do I have?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How long do I have?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-4.527617166190775, -1.3576963676979905`}}]},
+       "\"They never changed.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "They never changed.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.5103558119445049, -1.5893699806673969`}}]},
+       "\"The drI'ver stepped\\nFinally he gave up.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The drI'ver stepped\nFinally he gave up.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.665432433437508, 0.343678560053461}}]},
+       "\"I think about this.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I think about this.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.881132582951931, 1.7015278215336929`}}]},
+       "\"he asked nervously.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "he asked nervously.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.754850255411137, 4.100868720909454}}]},
+       "\"Dmitri looked back.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Dmitri looked back.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.7450819628284464`, -2.05660613963788}}]},
+       "\"He couldn't even guess.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He couldn't even guess.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.6753639922533863`, -1.9061193881928127`}}]},
+       "\"He couldn't imagine it.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He couldn't imagine it.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.7036136290357478`, -2.073619890170106}}]},
+       "\"Fredle couldn't resist.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Fredle couldn't resist.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.9222055111058538`, -2.3623079365684867`}}]},
+       "\"He couldn't stop looking.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He couldn't stop looking.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.35457648534863, -2.0496792095836653`}}]},
+       "\"Why couldn't you do that?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Why couldn't you do that?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.1615110799373891`, 0.24947901574282919`}}]},
+       "\"I suppose I could simply \\nI suppose I'llnever know.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I suppose I could simply \nI suppose I'llnever know.", 
+       "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.07384680941480655, 0.6695084908383134}}]},
+       "\"I imagine this is why Mr.\\nDisrupting form/lessness \\nIt could \
+be, Sticky said.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "I imagine this is why Mr.\nDisrupting form/lessness \nIt could be, \
+Sticky said.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.5850324747738299, 0.7038997086344209}}]},
+       "\"Mind if I pop down and say hello?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Mind if I pop down and say hello?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7031719361530625, 1.6181437609288316`}}]},
+       "\"Most likely you did not see this.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Most likely you did not see this.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.12279632626740151`, -0.3108124308884223}}]},
+       "\"I understand completely, said Mr.\\nWe, uh  we couldn't, Reynie \
+said.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "I understand completely, said Mr.\nWe, uh  we couldn't, Reynie said.",
+        "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.098344777701665, 0.533190870026436}}]},
+       "\"And yet the theory is invaluable.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And yet the theory is invaluable.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.733917118522916, 0.3445006927172032}}]},
+       "\"theory of scientific methodology.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "theory of scientific methodology.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.9810490123694888`, -1.878258609458338}}]},
+       "\"Translated by Frederick and Stef.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Translated by Frederick and Stef.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.26344016435387424`, -0.2443976449860591}}]},
+       "\"I dont understand, sir, said Max.\\ngures those who contemplate \
+them.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "I dont understand, sir, said Max.\ngures those who contemplate them.",
+        "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.463841743694061, 0.8296664217089038}}]},
+       "\"Brighton Women and Science Group.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Brighton Women and Science Group.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.5058204665934798, 0.20752191678775486`}}]},
+       "\"The support of Professors Robert \\nThis claim I do not want to \
+deny.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "The support of Professors Robert \nThis claim I do not want to deny.",
+        "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.3812639013371821`, -0.5314448853042505}}]},
+       "\"Reynies vision seemed to flicker.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Reynies vision seemed to flicker.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.1976804085839166`, -0.8072789868878252}}]},
+       "\"Reynie hardly seemed to hear him.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Reynie hardly seemed to hear him.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7494765322399753, -0.4809663477753081}}]},
+       "\"Assuming we can stop whatever Mr.\\nFredle couldn't argue about \
+that.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Assuming we can stop whatever Mr.\nFredle couldn't argue about that.",
+        "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7074346341434558, 1.4369426248865502`}}]},
+       "\"Assuming they havent been damaged.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Assuming they havent been damaged.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.5863925859494593, 1.3302876704065385`}}]},
+       "\"This discussion can therefore con.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "This discussion can therefore con.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.37331024172968325`, 2.1021221658421596`}}]},
+       "\"It may not be physically possible.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It may not be physically possible.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.49742685828402433`, 0.6769178422627102}}]},
+       "\"Thus the open supposition that Mr.\\nA paradigm is not simply a \
+theory.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Thus the open supposition that Mr.\nA paradigm is not simply a \
+theory.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.6971597797899214, 0.9190408821363792}}]},
+       "\"In a formulation that clearly pre.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "In a formulation that clearly pre.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-0.35550215541103153`, 0.31475611446325064`}}]},
+       "\"Our two astronomers would not say \\nOne girl, who seemed to have \
+green\\nI thought if I were able to corral\\nHe must have seemed very \
+arrogant.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Our two astronomers would not say \nOne girl, who seemed to have \
+green\nI thought if I were able to corral\nHe must have seemed very \
+arrogant.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.4842052091565682, -0.12437891230748059`}}]},
+       "\"We should not be confused by the .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "We should not be confused by the .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.8758114293839148, -1.0654512934897933`}}]},
+       "\"We couldn't get close, although we\\nrather probabilities ofthe \
+effect.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "We couldn't get close, although we\nrather probabilities ofthe \
+effect.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.0211016608422496`, 1.0680884686305379`}}]},
+       "\"later) the properties QI and Q2(e.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "later) the properties QI and Q2(e.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.6136648733529648, 0.05303434945922888}}]},
+       "\"He will not be satisfied until he \\nFor a moment Kate couldn't \
+answer.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "He will not be satisfied until he \nFor a moment Kate couldn't \
+answer.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.9175208797095648, -0.14077962968509244`}}]},
+       "\"What if I were to go back outside?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "What if I were to go back outside?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.142079093530753, 1.1309154415673823`}}]},
+       "\"Surrealism does not intend to dis.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Surrealism does not intend to dis.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.570855828875002, 1.3873945675474717`}}]},
+       "\"If I havent got it, I cant use it.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "If I havent got it, I cant use it.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.3088777481003884, -0.5800348803426043}}]},
+       "\"Sikes with an understanding smile.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Sikes with an understanding smile.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.43187107019314686`, -0.8725682941344222}}]},
+       "\"I understand, said Cooper quietly.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I understand, said Cooper quietly.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.2334703413715729`, 2.3247952528032747`}}]},
+       "\"That will help you love your life.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "That will help you love your life.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.447980616639223, -1.3538412168229532`}}]},
+       "\"I couldn't understand what he was.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I couldn't understand what he was.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.20716507021260133`, 0.25427357643004234`}}]},
+       "\"If I had, you might not have come.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "If I had, you might not have come.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.6930936707868824`, -0.4812033059017361}}]},
+       "\"I dare say he feels quite at home.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I dare say he feels quite at home.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.1736175162104632, 0.25742788197930366`}}]},
+       "\"You understand perfectly, said Mr.\\nRather he is mistaken in \
+assuming .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "You understand perfectly, said Mr.\nRather he is mistaken in assuming \
+.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.83420048516915, -0.6619023316715652}}]},
+       "\"He seemed to have no medium volume.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He seemed to have no medium volume.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.3071346452073713`, -0.5124967450234106}}]},
+       "\"The men seemed to carry no weapons.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The men seemed to carry no weapons.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.503865524738429, 0.5669964433380938}}]},
+       "\"And human beings the supposed bene.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And human beings the supposed bene.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.2881241177092821`, 0.05124096397068691}}]},
+       "\"The cavernous hall seemed stifling.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The cavernous hall seemed stifling.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.071987660758939, 1.8204239407726612`}}]},
+       "\"that corresponds with this theorem.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "that corresponds with this theorem.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.2691909714468137`, 0.13145730605458517`}}]},
+       "\"I suppose so, said Reynie uneasily.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I suppose so, said Reynie uneasily.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.126052953019139, 1.9323279583665105`}}]},
+       "\"This is all just amisunderstanding.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "This is all just amisunderstanding.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-0.023820679082781793`, 0.02170997603419153}}]},
+       "\"Rather society itself is formed in \\nI dont understand, he said \
+quietly.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Rather society itself is formed in \nI dont understand, he said \
+quietly.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.411314002844479, 0.7705641797906754}}]},
+       "\"Finally does not Daphnes arrested .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Finally does not Daphnes arrested .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.28385559666775273`, -2.353280116505272}}]},
+       "\"I really didnt understand it, Will.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I really didnt understand it, Will.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.675918125175187, -0.9908041855032915}}]},
+       "\"How am I supposed to find anything?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "How am I supposed to find anything?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-1.8788973228597246`, -0.18555932752479462`}}]},
+       "\"theories of spontaneous generation.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "theories of spontaneous generation.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.714429927372253, 0.8953476128302053}}]},
+       "\"I imagine theyll be just about full\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I imagine theyll be just about full", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7257041090347833, 1.2718985681549873`}}]},
+       "\"And this is not further surprising.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And this is not further surprising.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.9866847884593836, 0.29077159446860656`}}]},
+       "\"The acid content of the air is not \\nThomas couldn't tell the \
+difference.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "The acid content of the air is not \nThomas couldn't tell the \
+difference.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{-1.2881241177092835`, 0.051240963970685824`}}]},
+       "\"The pencil woman seemed unperturbed.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The pencil woman seemed unperturbed.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.41161301503196823`, 0.38456095231202503`}}]},
+       "\"I imagine well be running into those\\nI suppose so, Sticky said \
+miserably.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "I imagine well be running into those\nI suppose so, Sticky said \
+miserably.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.6708439576533896, -0.6308145125666454}}]},
+       "\"Kate seemed to have doubled in size.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Kate seemed to have doubled in size.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.7806422543698193`, -1.7116655658111095`}}]},
+       "\"Kate couldn't keep quiet any longer.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Kate couldn't keep quiet any longer.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-3.706455899870547, 0.5298467807206577}}]},
+       "\"Yet our predicament is not hopeless.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Yet our predicament is not hopeless.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.8784838587285682`, -0.8691724687353446}}]},
+       "\"Suppose that Sl'(green} was used (e.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Suppose that Sl'(green} was used (e.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.6344906056306373, -0.06266093723980105}}]},
+       "\"The Agent seemed to choose his words\\nThatseemed unlikely, Reynie \
+thought.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "The Agent seemed to choose his words\nThatseemed unlikely, Reynie \
+thought.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.3919139920135908`, 0.3755292758918522}}]},
+       "\"Shes off hunting pigeons, I suppose.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Shes off hunting pigeons, I suppose.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.5517815497227202, 0.3655000732692355}}]},
+       "\"A group told that its author was \\\"J.\\nthe phlogiston theory of \
+chemistry; \\nI understand your misgivingsyou have\\nHe was once the jailer, \
+if I recall.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "A group told that its author was \"J.\nthe phlogiston theory of \
+chemistry; \nI understand your misgivingsyou have\nHe was once the jailer, if \
+I recall.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.8120524691811746, -0.07925206290791367}}]},
+       "\"But the little man couldn't hurt Mrs.\\nJackson seemed ready to \
+strangle him.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "But the little man couldn't hurt Mrs.\nJackson seemed ready to \
+strangle him.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{3.0705711831722584`, -0.46991547062671224`}}]},
+       "\"So what if I like things comfortable?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "So what if I like things comfortable?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.3514039472368313`, 0.9688446144894065}}]},
+       "\"I will only consider [new] theories .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I will only consider [new] theories .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.1157859135939046`, 0.8605416436175536}}]},
+       "\"of science function so successfully .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "of science function so successfully .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.5010603642428546`, 0.8163749150732036}}]},
+       "\"The void is built around not covered.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "The void is built around not covered.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.7130686214176759, 0.19214731179951133`}}]},
+       "\"Whats left of it, I suppose, he said.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Whats left of it, I suppose, he said.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.2410733285779234`, 0.22730569220673946`}}]},
+       "\"Oh yes, I suppose he does, said Kate.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Oh yes, I suppose he does, said Kate.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.9842602080024891`, -1.4211610501116372`}}]},
+       "\"Reyniecouldn't think straight at all.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Reyniecouldn't think straight at all.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.5042880739699718`, 3.830713217599555}}]},
+       "\"However he is saying the following: .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "However he is saying the following: .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.03098508539096907, 0.07191859470029895}}]},
+       "\"His patron is Kant rather than james.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "His patron is Kant rather than james.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.2899566940195637`, 0.8228145863057935}}]},
+       "\"Such management extends not only to .\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Such management extends not only to .", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.2339001314983706`, -1.3949252137115737`}}]},
+       "\"No, because I couldn't, some of them.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "No, because I couldn't, some of them.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.2886575171042245`, 0.4189456987982988}}]},
+       "\"bears the impression of its occupant.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "bears the impression of its occupant.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.8804225208685295, -0.3229988930713256}}]},
+       "\"Just then, the cabin seemed to lurch.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Just then, the cabin seemed to lurch.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.1448225498869875`, 0.07322057508752591}}]},
+       "\"And indeed it seemed she never would.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And indeed it seemed she never would.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.3905686613148704`, 1.6470601168813837`}}]},
+       "\"Milligan seemed to drop from the sky.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Milligan seemed to drop from the sky.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.24790576605283443`, -0.5688554131386893}}]},
+       "\"And You've got a knife, I understand.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "And You've got a knife, I understand.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.5931989162540141, 1.3214680123398335`}}]},
+       "\"That isSPI is to be followed not SP2.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "That isSPI is to be followed not SP2.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.2518130174350461, -2.3944870765888737`}}]},
+       "\"He didnt need to understand raccoons.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "He didnt need to understand raccoons.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.7311127188881323, 0.2188294056484843}}]},
+       "\"Chickens seemed to be chattering away\\nThe passage in support of \
+Derridas re.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Chickens seemed to be chattering away\nThe passage in support of \
+Derridas re.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.5642870853603676`, -1.9658876576142226`}}]},
+       "\"Curtain couldn't see me today, that S.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Curtain couldn't see me today, that S.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.5572236605900103`, 3.9397293514672533`}}]},
+       "\"However following the symmetrical con.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "However following the symmetrical con.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.0986542583876577`, 1.3957942862614536`}}]},
+       "\"cials (prelates magistrates admirals).\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "cials (prelates magistrates admirals).", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.3353788464073704`, -1.4172639282236565`}}]},
+       "\"We couldn't have come here without it!\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "We couldn't have come here without it!", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.817659508861528, -1.0302211573953606`}}]},
+       "\"Am I supposed to fear unarmedchildren?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Am I supposed to fear unarmedchildren?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.21982081419294963`, 1.5419764378759242`}}]},
+       "\"It does not repel pain but absorbs it.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It does not repel pain but absorbs it.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], 
+        PointBox[{{0.0020217310669199276`, -0.2500449846498848}}]},
+       "\"No, noI mean, if I went whining to Mr.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "No, noI mean, if I went whining to Mr.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.33087370000126437`, 0.09312203733065637}}]},
+       "\"Are genuinely referential theories (i.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Are genuinely referential theories (i.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.6727211284733572`, 0.30439919012077127`}}]},
+       "\"Oh, I suppose theres some slight hope.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Oh, I suppose theres some slight hope.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{0.09271261159178605, 0.07014588421482376}}]},
+       "\"I understand it is an unpleasant thing\\nI understand you, Captain \
+Noland said.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "I understand it is an unpleasant thing\nI understand you, Captain \
+Noland said.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.9775325159426369, 1.2943883428171161`}}]},
+       "\"It had seemed like only a few minutes.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It had seemed like only a few minutes.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.858481575026233, -1.8071485852834557`}}]},
+       "\"You soundedawfully fierce, by the way.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "You soundedawfully fierce, by the way.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-2.4258169516406185`, 0.192831697695835}}]},
+       "\"It seemed to stretch forever and ever.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "It seemed to stretch forever and ever.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-1.3263696981570128`, -1.8370408680021542`}}]},
+       "\"But I couldn't see why you hated Lyra.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "But I couldn't see why you hated Lyra.", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{2.0730764845072422`, -2.05772924911824}}]},
+       "\"Do you understand what I mean by this?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "Do you understand what I mean by this?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{1.5981309508936619`, 0.48326048239597574`}}]},
+       "\"I suppose sheexpects us to wait again?\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, "I suppose sheexpects us to wait again?", "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       {Opacity[0.], PointBox[{{-0.3834254298078762, 0.5486738402491291}}]},
+       "\"Im assuming we can hitch a ride out of\\nConstance seemed skeptical \
+about this.\"",
+       TooltipStyle->"TextStyling"],
+      Annotation[#, 
+       "Im assuming we can hitch a ride out of\nConstance seemed skeptical \
+about this.", "Tooltip"]& ]}}, {}, {}, {{}, {}}, {{}, {}}},
+  AspectRatio->1,
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->All,
+  PlotRangeClipping->False,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.708072880535202*^9, 3.7080729603278627`*^9}, 
+   3.7080729931608224`*^9, 3.708073316518323*^9, 3.708073375930352*^9, {
+   3.7080734543947506`*^9, 3.708073494409771*^9}, {3.7080742891560354`*^9, 
+   3.708074305039809*^9}, 3.7080743505102654`*^9, 3.70807466438327*^9, {
+   3.7080747148447237`*^9, 3.7080747362822704`*^9}, 3.7080747867690706`*^9, {
+   3.708074818149105*^9, 3.708074847293132*^9}, {3.708074889578932*^9, 
+   3.708074917209302*^9}, 3.708074961938199*^9, {3.7080750752405634`*^9, 
+   3.708075096615715*^9}, 3.708075311309388*^9, 3.7080762876482754`*^9, 
+   3.7081120434348087`*^9, 
+   3.708112080574724*^9},ExpressionUUID->"5fe06c74-82e4-4879-a63b-\
+2bcb3dfdbd17"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"nSents", " ", "=", "150"}], ";"}]], "Input",
+ CellChangeTimes->{{3.708076507847966*^9, 3.7080765172024574`*^9}, 
+   3.7080765859547744`*^9, 
+   3.708112285717331*^9},ExpressionUUID->"b072ac24-0da3-410e-9721-\
+6f6be4da1d17"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sent2d", " ", "=", " ", 
+   RowBox[{"DimensionReduce", "[", 
+    RowBox[{
+     RowBox[{"Flatten", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"TextSentences", "[", 
+         RowBox[{"#", ",", "nSents"}], "]"}], "&"}], "@", "texts"}], "]"}], 
+     ",", "2", ",", 
+     RowBox[{"Method", "\[Rule]", "\"\<TSNE\>\""}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.70807423208995*^9, 3.7080742587697268`*^9}, {
+   3.708075596580085*^9, 3.7080756308831854`*^9}, {3.708075688716255*^9, 
+   3.708075703394771*^9}, {3.70807583532222*^9, 3.7080758422341623`*^9}, 
+   3.708076124250536*^9, {3.7080762270503826`*^9, 3.7080762608905*^9}, {
+   3.708076335642751*^9, 3.7080763357785873`*^9}, {3.7080763961946087`*^9, 
+   3.708076396330327*^9}, {3.708076525003276*^9, 3.708076528171274*^9}, {
+   3.7081122895250387`*^9, 3.7081123032162743`*^9}, {3.708112422501544*^9, 
+   3.7081124256607904`*^9}, {3.7081133211257105`*^9, 
+   3.7081133221729555`*^9}},ExpressionUUID->"72aa834f-0d2b-4ae6-a465-\
+0ae64182f343"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", "sent2d", "]"}]], "Input",
+ CellChangeTimes->{{3.708075710017911*^9, 3.7080757647947807`*^9}, {
+   3.7080758795790696`*^9, 3.7080758899383793`*^9}, {3.7080760223396435`*^9, 
+   3.708076022722331*^9}, 3.7080761070121636`*^9, {3.7080762011629686`*^9, 
+   3.708076267556737*^9}, {3.70807633943703*^9, 3.708076344549926*^9}, {
+   3.7080763769262285`*^9, 3.7080763922107577`*^9}, {3.70807645376307*^9, 
+   3.7080764551228266`*^9}, {3.7080765347176437`*^9, 
+   3.7080765416373816`*^9}, {3.7081123283091183`*^9, 
+   3.7081123318321238`*^9}},ExpressionUUID->"d72463d8-65c9-425d-a8d9-\
+052eedec7599"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+     0.0055000000000000005`], AbsoluteThickness[1.6], PointBox[CompressedData["
+1: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
+nGmuX6oB/w/Pvpx4
+      "]]}, {}}, {}, {}, {{}, {}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  ImageSize->{594., Automatic},
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{-6.95950497489223, 7.057370730467868}, {-9.401062936456006, 
+   6.647169917059134}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7080757653929615`*^9, {3.7080758836577463`*^9, 3.70807589027322*^9}, 
+   3.7080760233603163`*^9, 3.7080761078117013`*^9, 3.7080762178331738`*^9, {
+   3.7080762545963707`*^9, 3.7080763200499945`*^9}, {3.708076372248723*^9, 
+   3.7080763972130833`*^9}, 3.7080764284277325`*^9, 3.708076482234318*^9, {
+   3.7080765687756677`*^9, 3.7080766184096284`*^9}, 3.708112332529619*^9, 
+   3.7081131650591946`*^9, 3.708113199324561*^9, 
+   3.70811334591784*^9},ExpressionUUID->"76f192d9-e15e-4e6e-8d8c-\
+0d5bdd680995"]
+}, Open  ]]
+},
+WindowSize->{759, 813},
+WindowMargins->{{Automatic, 23}, {75, Automatic}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 423, 10, 30, "Input", "ExpressionUUID" -> \
+"4495ec39-88a8-427b-ba6f-94e8945c1fc0"],
+Cell[984, 32, 344, 7, 30, "Input", "ExpressionUUID" -> \
+"4fcd4ad0-faf2-4f3e-b199-568822f18da4"],
+Cell[1331, 41, 1048, 23, 88, "Input", "ExpressionUUID" -> \
+"2fa24b2c-c7ed-404e-a0e8-d619dfbfd42a"],
+Cell[CellGroupData[{
+Cell[2404, 68, 277, 7, 30, "Input", "ExpressionUUID" -> \
+"1f8eb181-c146-4794-9224-e5f89326de75"],
+Cell[2684, 77, 369, 8, 50, "Output", "ExpressionUUID" -> \
+"bd7fdba0-ee18-49b4-9bb1-4318dac79254"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3090, 90, 448, 10, 30, "Input", "ExpressionUUID" -> \
+"22b5b67b-4eb7-4eec-ae4f-bc3a656ee087"],
+Cell[3541, 102, 733, 15, 88, "Output", "ExpressionUUID" -> \
+"a1daf1fc-dba4-41a8-af49-8fc4604b4a1b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4311, 122, 780, 17, 50, "Input", "ExpressionUUID" -> \
+"953b4431-690a-452d-84ed-04ca060a45bc"],
+Cell[5094, 141, 118988, 2776, 375, "Output", "ExpressionUUID" -> \
+"5fe06c74-82e4-4879-a63b-2bcb3dfdbd17"]
+}, Open  ]],
+Cell[124097, 2920, 258, 6, 30, "Input", "ExpressionUUID" -> \
+"b072ac24-0da3-410e-9721-6f6be4da1d17"],
+Cell[124358, 2928, 1041, 21, 30, "Input", "ExpressionUUID" -> \
+"72aa834f-0d2b-4ae6-a465-0ae64182f343"],
+Cell[CellGroupData[{
+Cell[125424, 2953, 631, 10, 30, "Input", "ExpressionUUID" -> \
+"d72463d8-65c9-425d-a8d9-052eedec7599"],
+Cell[126058, 2965, 14290, 250, 416, "Output", "ExpressionUUID" -> \
+"76f192d9-e15e-4e6e-8d8c-0d5bdd680995"]
+}, Open  ]]
+}
+]
+*)
+
