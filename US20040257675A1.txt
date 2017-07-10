@@ -1,2 +1,0 @@
-US20040257675A1 - Optical measuring system, and a projection objective 
-An optical measuring system is provided with a measuring machine that has at least one measuring element for determining locations and at least one measuring element for determining angles. At least one common reference surface is provided for the location-determining measuring element and the angle-determining measuring element. 

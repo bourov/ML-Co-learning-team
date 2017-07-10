@@ -1,5 +1,0 @@
-US20080036982A1 - Method For Structuring A Substrate Using Multiple Exposure 
-1. Method for patterning a substrate using multiple exposure.
-2.1. The invention relates to a method for patterning a substrate using exposure processes of an adjustable optical system, a multiple exposure being used for producing a structure image on the substrate.
-2.2. According to the invention, for at least one of the plurality of exposures, the imaging quality of the optical system is determined by means of a respective measurement step and at least one parameter of the optical system that influences the imaging quality is set depending on this.
-2.3. Use e.g. for the patterning of semiconductor wafers in microlithography projection exposure apparatuses.
