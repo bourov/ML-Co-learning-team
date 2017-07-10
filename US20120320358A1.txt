@@ -1,0 +1,2 @@
+US20120320358A1 - Method for operating a projection exposure apparatus with correction of imaging aberrations induced by the mask 
+The disclosure relates to a method for adapting a projection exposure apparatus for microlithography to a mask having structures with different pitches and/or different structure widths in different structure directions. Wavefront aberrations induced by the mask are reduced by a manipulator of the projection exposure apparatus for microlithography.

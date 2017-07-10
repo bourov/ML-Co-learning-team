@@ -1,0 +1,2 @@
+US20140347646A1 - Method and apparatus for compensating at least one defect of an optical system 
+The invention relates to a method for compensating at least one defect of an optical system which comprises introducing an arrangement of local persistent modifications in at least one optical element of the optical system, which does not have pattern elements on one of its optical surfaces, so that the at least one defect is at least partially compensated.
